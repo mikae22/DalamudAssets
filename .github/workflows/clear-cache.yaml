@@ -1,0 +1,11 @@
+name: Refresh Web Services
+on: 
+  workflow_dispatch:
+
+jobs:
+  generate:
+    name: Refresh Web Services
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear Web Services cache
+        run: curl -X POST --fail https://xlweb.xivpf.xyz/Dalamud/Asset/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
